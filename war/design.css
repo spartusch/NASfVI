@@ -1,0 +1,26 @@
+
+h1, h2, h3 {
+	text-align: center;
+	margin: 1em auto;
+}
+
+span.error {
+	color: red;
+}
+
+span.edition {
+	font-weight: lighter;
+	font-size: x-small;
+}
+
+#content {
+	margin-top: 2em;
+}
+
+.gwt-DecoratorPanel {
+	background-color: #f7fbff;
+}
+
+.gwt-Tree .gwt-TreeItem {
+	background-color: #f7fbff;
+}

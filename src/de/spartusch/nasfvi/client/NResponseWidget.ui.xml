@@ -1,0 +1,44 @@
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder' xmlns:g='urn:import:com.google.gwt.user.client.ui'>
+
+<ui:style>
+	.answerLabel {
+		font-weight: bold;
+		margin: 0.5em auto;
+	}
+	.answerBox {
+		margin-bottom: 1em;
+	}
+	.link {
+		cursor: pointer;
+		color: blue;
+		text-decoration: none;
+	}
+	.text-left {
+		text-align: left;
+	}
+</ui:style>
+
+<g:VerticalPanel width="100%">
+	<g:Label stylePrimaryName="{style.answerLabel}">Antwort:</g:Label>
+
+	<g:HTMLPanel stylePrimaryName="{style.answerBox}">
+		<g:InlineLabel ui:field="answer"/>
+		<g:Anchor ui:field="link" stylePrimaryName="{style.link}">mehr</g:Anchor>
+	</g:HTMLPanel>
+
+	<g:DisclosurePanel animationEnabled="true" open="false">
+		<g:header>Details und Analysen</g:header>
+		<g:HTMLPanel>
+			<table class="{style.text-left}" cellspacing="4">
+				<tr><td>Suchanfrage:</td><td><g:InlineLabel ui:field="query"/></td></tr>
+				<tr><td>Ähnlichkeit:</td><td><g:InlineLabel ui:field="similQuery"/></td></tr>
+				<tr><td>Gesuchte Felder:</td><td><g:InlineLabel ui:field="fields"/></td></tr>
+				<tr><td>Hits:</td><td><g:InlineLabel ui:field="hits"/> Treffer</td></tr>
+				<tr><td colspan="2"><g:Tree ui:field="analysisReq"/></td></tr>
+				<tr><td colspan="2"><g:Tree ui:field="analysisAns"/></td></tr>
+			</table>
+		</g:HTMLPanel>
+	</g:DisclosurePanel>
+</g:VerticalPanel>
+
+</ui:UiBinder>

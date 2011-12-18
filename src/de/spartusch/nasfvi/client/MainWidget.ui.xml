@@ -1,0 +1,55 @@
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder' xmlns:g='urn:import:com.google.gwt.user.client.ui'>
+
+<ui:style>
+	.tableInput {
+		padding: 8px;
+		text-align: left;
+	}
+	.cellSend {
+		vertical-align: top;
+	}
+	.link {
+		cursor: pointer;
+		color: blue;
+		text-decoration: none;
+	}
+</ui:style>
+
+<g:VerticalPanel width="100%">
+	<g:cell horizontalAlignment="ALIGN_CENTER">
+		<g:DecoratorPanel>
+			<g:HTMLPanel>
+				<table class="{style.tableInput}" cellspacing="8">
+					<tr>
+						<td colspan="2">Bitte geben Sie Ihre Anfrage ein:</td>
+					</tr>
+					<tr>
+						<td><g:SuggestBox animationEnabled="true" ui:field="suggestBox"/></td>
+						<td class="{style.cellSend}"><g:Button ui:field="sendButton">Abschicken</g:Button></td>
+					</tr>
+					<tr>
+						<td colspan="2"><g:SimplePanel width="500px" ui:field="responsePanel"/></td>
+					</tr>
+					<tr>
+						<td colspan="2">
+							<g:DisclosurePanel animationEnabled="true" width="500px" open="true" ui:field="hints">
+								<g:header>Hinweise</g:header>
+								<g:HTMLPanel>
+									<p>Zufällig gewählte Beispiele für Anfragen:</p>
+									<ul>
+										<g:HTML ui:field="exampleItems"/>
+									</ul>
+									<g:Anchor ui:field="moreExamples" stylePrimaryName="{style.link}">weitere Beispiele</g:Anchor>
+									<p><u>Bitte beachten:</u> Geben Sie Eigennamen und Raumangaben, wenn diese aus
+									mehr als einem Wort bestehen, immer zwischen Anführungszeichen ("...") ein!</p>
+								</g:HTMLPanel>
+							</g:DisclosurePanel>
+						</td>
+					</tr>
+				</table>
+			</g:HTMLPanel>
+		</g:DecoratorPanel>
+	</g:cell>
+</g:VerticalPanel>
+
+</ui:UiBinder>

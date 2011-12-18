@@ -1,0 +1,269 @@
+:- op(100, fx, '?').
+:- op(100, xfx, '>').
+:- op(600, yfx, und).
+:- op(650, yfx, oder).
+vollform(v>aux, [[g, e, h, a, b, t], []], part2, [], '', haben, [gehabt, '']).
+vollform(v>aux, [[w, o, r, d, e, n], []], part2, [], '', werden, [worden, '']).
+vollform(v>aux, [[g, e, w, e, s, e, n], []], part2, [], '', sein, [gewesen, '']).
+vollform(v>aux, [[h, a, b, e, n], []], inf, [], '', haben, [haben, '']).
+vollform(v>aux, [[w, e, r, d, e, n], []], inf, [], '', werden, [werden, '']).
+vollform(v>aux, [[s, e, i, n], []], inf, [], '', sein, [sein, '']).
+vollform(v>aux, [[h, a, t], []], [_, 3, sg, praes], [], '', haben, [hat, '']).
+vollform(v>aux, [[h, a, b, e, n], []], [_, 3, pl, praes], [], '', haben, [haben, '']).
+vollform(v>aux, [[h, a, t, t, e], []], [_, 3, sg, praet], [], '', haben, [hatte, '']).
+vollform(v>aux, [[h, a, t, t, e, n], []], [_, 3, pl, praet], [], '', haben, [hatten, '']).
+vollform(v>aux, [[w, i, r, d], []], [_, 3, sg, praes], [], '', werden, [wird, '']).
+vollform(v>aux, [[w, u, r, d, e], []], [_, 3, sg, praet], [], '', werden, [wurde, '']).
+vollform(v>aux, [[w, e, r, d, e, n], []], [_, 3, pl, praes], [], '', werden, [werden, '']).
+vollform(v>aux, [[w, u, r, d, e, n], []], [_, 3, pl, praet], [], '', werden, [wurden, '']).
+vollform(v>aux, [[i, s, t], []], [_, 3, sg, praes], [], '', sein, [ist, '']).
+vollform(v>aux, [[s, i, n, d], []], [_, 3, pl, praes], [], '', sein, [sind, '']).
+vollform(v>aux, [[w, a, r], []], [_, 3, sg, praet], [], '', sein, [war, '']).
+vollform(v>aux, [[w, a, r, e, n], []], [_, 3, pl, praet], [], '', sein, [waren, '']).
+vollform(v>v, [[s, t, a, t, t, g, e, f, u, n, d, e, n], []], part2, [patiens(event, A), ?loc(C), ?temp_d(B)], A*lam(D, B*lam(F, C*lam(E, halten('_', D, E, F)))), stattfinden, [stattgefunden, '']).
+vollform(v>v, [[g, e, h, a, l, t, e, n], []], part2, [agens(hum, A), patiens(event, D), ?loc(C), ?temp_d(B)], A*lam(E, B*lam(H, C*lam(G, D*lam(F, halten(E, F, G, H))))), halten, [gehalten, '']).
+vollform(v>v, [[g, e, g, e, b, e, n], []], part2, [agens(hum, A), patiens(event, D), ?loc(C), ?temp_d(B)], A*lam(E, B*lam(H, C*lam(G, D*lam(F, halten(E, F, G, H))))), geben, [gegeben, '']).
+vollform(v>v, [[g, e, a, e, h, n, e, l, t], []], part2, [nom(event, A), dat(event, C), ?temp_d(B)], A*lam(D, B*lam(F, C*lam(E, aehneln(D, E, F)))), aehneln, [geaehnelt, '']).
+vollform(v>v, [[g, e, h, a, n, d, e, l, t], []], part2, [patiens(event, A), thema(dat, B)], A*B, handeln, [gehandelt, '']).
+vollform(v>v, [[g, e, g, e, b, e, n], []], part2, [expletiv, patiens(_, A)], A*lam(B, B), geben, [gegeben, '']).
+vollform(v>v, [[s, t, a, t, t, f, i, n, d, e, n], []], inf, [patiens(event, A), ?loc(C), ?temp_d(B)], A*lam(D, B*lam(F, C*lam(E, halten('_', D, E, F)))), stattfinden, [stattfinden, '']).
+vollform(v>v, [[h, a, l, t, e, n], []], inf, [agens(hum, A), patiens(event, D), ?loc(C), ?temp_d(B)], A*lam(E, B*lam(H, C*lam(G, D*lam(F, halten(E, F, G, H))))), halten, [halten, '']).
+vollform(v>v, [[g, e, b, e, n], []], inf, [agens(hum, A), patiens(event, D), ?loc(C), ?temp_d(B)], A*lam(E, B*lam(H, C*lam(G, D*lam(F, halten(E, F, G, H))))), geben, [geben, '']).
+vollform(v>v, [[a, e, h, n, e, l, n], []], inf, [nom(event, A), dat(event, C), ?temp_d(B)], A*lam(D, B*lam(F, C*lam(E, aehneln(D, E, F)))), aehneln, [aehneln, '']).
+vollform(v>v, [[h, a, n, d, e, l, n], []], inf, [patiens(event, A), thema(dat, B)], A*B, handeln, [handeln, '']).
+vollform(v>v, [[g, e, b, e, n], []], inf, [expletiv, patiens(_, A)], A*lam(B, B), geben, [geben, '']).
+vollform(v>v, [[f, i, n, d, e, t], [s, t, a, t, t]], [v1/v2, 3, sg, praes], [patiens(event, A), ?loc(C), ?temp_d(B)], A*lam(D, B*lam(F, C*lam(E, halten('_', D, E, F)))), stattfinden, [findet, statt]).
+vollform(v>v, [[h, a, e, l, t], []], [v1/v2, 3, sg, praes], [agens(hum, A), patiens(event, D), ?loc(C), ?temp_d(B)], A*lam(E, B*lam(H, C*lam(G, D*lam(F, halten(E, F, G, H))))), halten, [haelt, '']).
+vollform(v>v, [[g, i, b, t], []], [v1/v2, 3, sg, praes], [agens(hum, A), patiens(event, D), ?loc(C), ?temp_d(B)], A*lam(E, B*lam(H, C*lam(G, D*lam(F, halten(E, F, G, H))))), geben, [gibt, '']).
+vollform(v>v, [[a, e, h, n, e, l, t], []], [v1/v2, 3, sg, praes], [nom(event, A), dat(event, C), ?temp_d(B)], A*lam(D, B*lam(F, C*lam(E, aehneln(D, E, F)))), aehneln, [aehnelt, '']).
+vollform(v>v, [[h, a, n, d, e, l, t], []], [v1/v2, 3, sg, praes], [patiens(event, A), thema(dat, B)], A*B, handeln, [handelt, '']).
+vollform(v>v, [[g, i, b, t], []], [v1/v2, 3, sg, praes], [expletiv, patiens(_, A)], A*lam(B, B), geben, [gibt, '']).
+vollform(v>v, [[f, i, n, d, e, n], [s, t, a, t, t]], [v1/v2, 3, pl, praes], [patiens(event, A), ?loc(C), ?temp_d(B)], A*lam(D, B*lam(F, C*lam(E, halten('_', D, E, F)))), stattfinden, [finden, statt]).
+vollform(v>v, [[h, a, l, t, e, n], []], [v1/v2, 3, pl, praes], [agens(hum, A), patiens(event, D), ?loc(C), ?temp_d(B)], A*lam(E, B*lam(H, C*lam(G, D*lam(F, halten(E, F, G, H))))), halten, [halten, '']).
+vollform(v>v, [[g, e, b, e, n], []], [v1/v2, 3, pl, praes], [agens(hum, A), patiens(event, D), ?loc(C), ?temp_d(B)], A*lam(E, B*lam(H, C*lam(G, D*lam(F, halten(E, F, G, H))))), geben, [geben, '']).
+vollform(v>v, [[a, e, h, n, e, l, n], []], [v1/v2, 3, pl, praes], [nom(event, A), dat(event, C), ?temp_d(B)], A*lam(D, B*lam(F, C*lam(E, aehneln(D, E, F)))), aehneln, [aehneln, '']).
+vollform(v>v, [[h, a, n, d, e, l, n], []], [v1/v2, 3, pl, praes], [patiens(event, A), thema(dat, B)], A*B, handeln, [handeln, '']).
+vollform(v>v, [[g, e, b, e, n], []], [v1/v2, 3, pl, praes], [expletiv, patiens(_, A)], A*lam(B, B), geben, [geben, '']).
+vollform(v>v, [[f, a, n, d], [s, t, a, t, t]], [v1/v2, 3, sg, praet], [patiens(event, A), ?loc(C), ?temp_d(B)], A*lam(D, B*lam(F, C*lam(E, halten('_', D, E, F)))), stattfinden, [fand, statt]).
+vollform(v>v, [[h, i, e, l, t], []], [v1/v2, 3, sg, praet], [agens(hum, A), patiens(event, D), ?loc(C), ?temp_d(B)], A*lam(E, B*lam(H, C*lam(G, D*lam(F, halten(E, F, G, H))))), halten, [hielt, '']).
+vollform(v>v, [[g, a, b], []], [v1/v2, 3, sg, praet], [agens(hum, A), patiens(event, D), ?loc(C), ?temp_d(B)], A*lam(E, B*lam(H, C*lam(G, D*lam(F, halten(E, F, G, H))))), geben, [gab, '']).
+vollform(v>v, [[a, e, h, n, e, l, t, e], []], [v1/v2, 3, sg, praet], [nom(event, A), dat(event, C), ?temp_d(B)], A*lam(D, B*lam(F, C*lam(E, aehneln(D, E, F)))), aehneln, [aehnelte, '']).
+vollform(v>v, [[h, a, n, d, e, l, t, e], []], [v1/v2, 3, sg, praet], [patiens(event, A), thema(dat, B)], A*B, handeln, [handelte, '']).
+vollform(v>v, [[g, a, b], []], [v1/v2, 3, sg, praet], [expletiv, patiens(_, A)], A*lam(B, B), geben, [gab, '']).
+vollform(v>v, [[f, a, n, d, e, n], [s, t, a, t, t]], [v1/v2, 3, pl, praet], [patiens(event, A), ?loc(C), ?temp_d(B)], A*lam(D, B*lam(F, C*lam(E, halten('_', D, E, F)))), stattfinden, [fanden, statt]).
+vollform(v>v, [[h, i, e, l, t, e, n], []], [v1/v2, 3, pl, praet], [agens(hum, A), patiens(event, D), ?loc(C), ?temp_d(B)], A*lam(E, B*lam(H, C*lam(G, D*lam(F, halten(E, F, G, H))))), halten, [hielten, '']).
+vollform(v>v, [[g, a, b, e, n], []], [v1/v2, 3, pl, praet], [agens(hum, A), patiens(event, D), ?loc(C), ?temp_d(B)], A*lam(E, B*lam(H, C*lam(G, D*lam(F, halten(E, F, G, H))))), geben, [gaben, '']).
+vollform(v>v, [[a, e, h, n, e, l, t, e, n], []], [v1/v2, 3, pl, praet], [nom(event, A), dat(event, C), ?temp_d(B)], A*lam(D, B*lam(F, C*lam(E, aehneln(D, E, F)))), aehneln, [aehnelten, '']).
+vollform(v>v, [[h, a, n, d, e, l, t, e, n], []], [v1/v2, 3, pl, praet], [patiens(event, A), thema(dat, B)], A*B, handeln, [handelten, '']).
+vollform(v>v, [[g, a, b, e, n], []], [v1/v2, 3, pl, praet], [expletiv, patiens(_, A)], A*lam(B, B), geben, [gaben, '']).
+vollform(n>n, [s, o, m, m, e, r, s, e, m, e, s, t, e, r], [sg, nom], semester>sose, neut, A-A, lam(C, lam(B, semester(B, C))), 'Sommersemester', 'Sommersemester').
+vollform(n>n, [w, i, n, t, e, r, s, e, m, e, s, t, e, r], [sg, nom], semester>wise, neut, A-A, lam(C, lam(B, semester(B, C))), 'Wintersemester', 'Wintersemester').
+vollform(n>n, [s, e, m, e, s, t, e, r], [sg, nom], semester>sem, neut, A-A, lam(C, lam(B, semester(B, C))), 'Semester', 'Semester').
+vollform(n>n, [m, o, n, t, a, g], [sg, nom], temp_d, mask, A-A, lam(B, tag(B, mo)), 'Montag', 'Montag').
+vollform(n>n, [d, i, e, n, s, t, a, g], [sg, nom], temp_d, mask, A-A, lam(B, tag(B, di)), 'Dienstag', 'Dienstag').
+vollform(n>n, [m, i, t, t, w, o, c, h], [sg, nom], temp_d, mask, A-A, lam(B, tag(B, mi)), 'Mittwoch', 'Mittwoch').
+vollform(n>n, [d, o, n, n, e, r, s, t, a, g], [sg, nom], temp_d, mask, A-A, lam(B, tag(B, do)), 'Donnerstag', 'Donnerstag').
+vollform(n>n, [f, r, e, i, t, a, g], [sg, nom], temp_d, mask, A-A, lam(B, tag(B, fr)), 'Freitag', 'Freitag').
+vollform(n>n, [s, a, m, s, t, a, g], [sg, nom], temp_d, mask, A-A, lam(B, tag(B, sa)), 'Samstag', 'Samstag').
+vollform(n>n, [s, o, n, n, t, a, g], [sg, nom], temp_d, mask, A-A, lam(B, tag(B, so)), 'Sonntag', 'Sonntag').
+vollform(n>app, [v, e, r, a, n, s, t, a, l, t, u, n, g], [sg, nom], event, fem, [?[pp, [akk], thema, _, D, _]|A]-A, lam(C, lam(B, veranstaltung(B, C)und D*B)), 'Veranstaltung', 'Veranstaltung').
+vollform(n>app, [k, u, r, s], [sg, nom], event, mask, [?[pp, [akk], thema, _, D, _]|A]-A, lam(C, lam(B, veranstaltung(B, C)und D*B)), 'Kurs', 'Kurs').
+vollform(n>app, [v, o, r, l, e, s, u, n, g], [sg, nom], event, fem, [?[pp, [akk], thema, _, D, _]|A]-A, lam(C, lam(B, veranstaltung(B, C)und typ(B, vorlesung)und D*B)), 'Vorlesung', 'Vorlesung').
+vollform(n>app, [s, e, m, i, n, a, r], [sg, nom], event, neut, [?[pp, [akk], thema, _, D, _]|A]-A, lam(C, lam(B, veranstaltung(B, C)und typ(B, seminar)und D*B)), 'Seminar', 'Seminar').
+vollform(n>app, [p, r, o, s, e, m, i, n, a, r], [sg, nom], event, neut, [?[pp, [akk], thema, _, D, _]|A]-A, lam(C, lam(B, veranstaltung(B, C)und typ(B, proseminar)und D*B)), 'Proseminar', 'Proseminar').
+vollform(n>app, [h, a, u, p, t, s, e, m, i, n, a, r], [sg, nom], event, neut, [?[pp, [akk], thema, _, D, _]|A]-A, lam(C, lam(B, veranstaltung(B, C)und typ(B, hauptseminar)und D*B)), 'Hauptseminar', 'Hauptseminar').
+vollform(n>app, [r, a, u, m], [sg, nom], loc, mask, A-A, lam(C, lam(B, raum(B, C))), 'Raum', 'Raum').
+vollform(n>app, [d, o, z, e, n, t], [sg, nom], hum, mask, A-A, lam(C, lam(B, dozent(B, C))), 'Dozent', 'Dozent').
+vollform(n>app, [d, o, z, e, n, t, i, n], [sg, nom], hum, fem, A-A, lam(C, lam(B, dozent(B, C))), 'Dozentin', 'Dozentin').
+vollform(n>app, [h, e, r, r], [sg, nom], hum, mask, A-A, lam(C, lam(B, dozent(B, C))), 'Herr', 'Herr').
+vollform(n>app, [f, r, a, u], [sg, nom], hum, fem, A-A, lam(C, lam(B, dozent(B, C))), 'Frau', 'Frau').
+vollform(n>app, [p, r, o, f, e, s, s, o, r], [sg, nom], hum, mask, A-A, lam(C, lam(B, dozent(B, C)und dozent_titel(B, prof))), 'Professor', 'Professor').
+vollform(n>app, [p, r, o, f, e, s, s, o, r, i, n], [sg, nom], hum, fem, A-A, lam(C, lam(B, dozent(B, C)und dozent_titel(B, prof))), 'Professorin', 'Professorin').
+vollform(n>n, [s, o, m, m, e, r, s, e, m, e, s, t, e, r], [sg, dat], semester>sose, neut, A-A, lam(C, lam(B, semester(B, C))), 'Sommersemester', 'Sommersemester').
+vollform(n>n, [w, i, n, t, e, r, s, e, m, e, s, t, e, r], [sg, dat], semester>wise, neut, A-A, lam(C, lam(B, semester(B, C))), 'Wintersemester', 'Wintersemester').
+vollform(n>n, [s, e, m, e, s, t, e, r], [sg, dat], semester>sem, neut, A-A, lam(C, lam(B, semester(B, C))), 'Semester', 'Semester').
+vollform(n>n, [m, o, n, t, a, g], [sg, dat], temp_d, mask, A-A, lam(B, tag(B, mo)), 'Montag', 'Montag').
+vollform(n>n, [d, i, e, n, s, t, a, g], [sg, dat], temp_d, mask, A-A, lam(B, tag(B, di)), 'Dienstag', 'Dienstag').
+vollform(n>n, [m, i, t, t, w, o, c, h], [sg, dat], temp_d, mask, A-A, lam(B, tag(B, mi)), 'Mittwoch', 'Mittwoch').
+vollform(n>n, [d, o, n, n, e, r, s, t, a, g], [sg, dat], temp_d, mask, A-A, lam(B, tag(B, do)), 'Donnerstag', 'Donnerstag').
+vollform(n>n, [f, r, e, i, t, a, g], [sg, dat], temp_d, mask, A-A, lam(B, tag(B, fr)), 'Freitag', 'Freitag').
+vollform(n>n, [s, a, m, s, t, a, g], [sg, dat], temp_d, mask, A-A, lam(B, tag(B, sa)), 'Samstag', 'Samstag').
+vollform(n>n, [s, o, n, n, t, a, g], [sg, dat], temp_d, mask, A-A, lam(B, tag(B, so)), 'Sonntag', 'Sonntag').
+vollform(n>app, [v, e, r, a, n, s, t, a, l, t, u, n, g], [sg, dat], event, fem, [?[pp, [akk], thema, _, D, _]|A]-A, lam(C, lam(B, veranstaltung(B, C)und D*B)), 'Veranstaltung', 'Veranstaltung').
+vollform(n>app, [k, u, r, s], [sg, dat], event, mask, [?[pp, [akk], thema, _, D, _]|A]-A, lam(C, lam(B, veranstaltung(B, C)und D*B)), 'Kurs', 'Kurs').
+vollform(n>app, [v, o, r, l, e, s, u, n, g], [sg, dat], event, fem, [?[pp, [akk], thema, _, D, _]|A]-A, lam(C, lam(B, veranstaltung(B, C)und typ(B, vorlesung)und D*B)), 'Vorlesung', 'Vorlesung').
+vollform(n>app, [s, e, m, i, n, a, r], [sg, dat], event, neut, [?[pp, [akk], thema, _, D, _]|A]-A, lam(C, lam(B, veranstaltung(B, C)und typ(B, seminar)und D*B)), 'Seminar', 'Seminar').
+vollform(n>app, [p, r, o, s, e, m, i, n, a, r], [sg, dat], event, neut, [?[pp, [akk], thema, _, D, _]|A]-A, lam(C, lam(B, veranstaltung(B, C)und typ(B, proseminar)und D*B)), 'Proseminar', 'Proseminar').
+vollform(n>app, [h, a, u, p, t, s, e, m, i, n, a, r], [sg, dat], event, neut, [?[pp, [akk], thema, _, D, _]|A]-A, lam(C, lam(B, veranstaltung(B, C)und typ(B, hauptseminar)und D*B)), 'Hauptseminar', 'Hauptseminar').
+vollform(n>app, [r, a, u, m], [sg, dat], loc, mask, A-A, lam(C, lam(B, raum(B, C))), 'Raum', 'Raum').
+vollform(n>app, [d, o, z, e, n, t, e, n], [sg, dat], hum, mask, A-A, lam(C, lam(B, dozent(B, C))), 'Dozent', 'Dozenten').
+vollform(n>app, [d, o, z, e, n, t, i, n], [sg, dat], hum, fem, A-A, lam(C, lam(B, dozent(B, C))), 'Dozentin', 'Dozentin').
+vollform(n>app, [h, e, r, r, n], [sg, dat], hum, mask, A-A, lam(C, lam(B, dozent(B, C))), 'Herr', 'Herrn').
+vollform(n>app, [h, e, r, r, e, n], [sg, dat], hum, mask, A-A, lam(C, lam(B, dozent(B, C))), 'Herr', 'Herren').
+vollform(n>app, [f, r, a, u], [sg, dat], hum, fem, A-A, lam(C, lam(B, dozent(B, C))), 'Frau', 'Frau').
+vollform(n>app, [p, r, o, f, e, s, s, o, r], [sg, dat], hum, mask, A-A, lam(C, lam(B, dozent(B, C)und dozent_titel(B, prof))), 'Professor', 'Professor').
+vollform(n>app, [p, r, o, f, e, s, s, o, r, i, n], [sg, dat], hum, fem, A-A, lam(C, lam(B, dozent(B, C)und dozent_titel(B, prof))), 'Professorin', 'Professorin').
+vollform(n>n, [s, o, m, m, e, r, s, e, m, e, s, t, e, r], [sg, akk], semester>sose, neut, A-A, lam(C, lam(B, semester(B, C))), 'Sommersemester', 'Sommersemester').
+vollform(n>n, [w, i, n, t, e, r, s, e, m, e, s, t, e, r], [sg, akk], semester>wise, neut, A-A, lam(C, lam(B, semester(B, C))), 'Wintersemester', 'Wintersemester').
+vollform(n>n, [s, e, m, e, s, t, e, r], [sg, akk], semester>sem, neut, A-A, lam(C, lam(B, semester(B, C))), 'Semester', 'Semester').
+vollform(n>n, [m, o, n, t, a, g], [sg, akk], temp_d, mask, A-A, lam(B, tag(B, mo)), 'Montag', 'Montag').
+vollform(n>n, [d, i, e, n, s, t, a, g], [sg, akk], temp_d, mask, A-A, lam(B, tag(B, di)), 'Dienstag', 'Dienstag').
+vollform(n>n, [m, i, t, t, w, o, c, h], [sg, akk], temp_d, mask, A-A, lam(B, tag(B, mi)), 'Mittwoch', 'Mittwoch').
+vollform(n>n, [d, o, n, n, e, r, s, t, a, g], [sg, akk], temp_d, mask, A-A, lam(B, tag(B, do)), 'Donnerstag', 'Donnerstag').
+vollform(n>n, [f, r, e, i, t, a, g], [sg, akk], temp_d, mask, A-A, lam(B, tag(B, fr)), 'Freitag', 'Freitag').
+vollform(n>n, [s, a, m, s, t, a, g], [sg, akk], temp_d, mask, A-A, lam(B, tag(B, sa)), 'Samstag', 'Samstag').
+vollform(n>n, [s, o, n, n, t, a, g], [sg, akk], temp_d, mask, A-A, lam(B, tag(B, so)), 'Sonntag', 'Sonntag').
+vollform(n>app, [v, e, r, a, n, s, t, a, l, t, u, n, g], [sg, akk], event, fem, [?[pp, [akk], thema, _, D, _]|A]-A, lam(C, lam(B, veranstaltung(B, C)und D*B)), 'Veranstaltung', 'Veranstaltung').
+vollform(n>app, [k, u, r, s], [sg, akk], event, mask, [?[pp, [akk], thema, _, D, _]|A]-A, lam(C, lam(B, veranstaltung(B, C)und D*B)), 'Kurs', 'Kurs').
+vollform(n>app, [v, o, r, l, e, s, u, n, g], [sg, akk], event, fem, [?[pp, [akk], thema, _, D, _]|A]-A, lam(C, lam(B, veranstaltung(B, C)und typ(B, vorlesung)und D*B)), 'Vorlesung', 'Vorlesung').
+vollform(n>app, [s, e, m, i, n, a, r], [sg, akk], event, neut, [?[pp, [akk], thema, _, D, _]|A]-A, lam(C, lam(B, veranstaltung(B, C)und typ(B, seminar)und D*B)), 'Seminar', 'Seminar').
+vollform(n>app, [p, r, o, s, e, m, i, n, a, r], [sg, akk], event, neut, [?[pp, [akk], thema, _, D, _]|A]-A, lam(C, lam(B, veranstaltung(B, C)und typ(B, proseminar)und D*B)), 'Proseminar', 'Proseminar').
+vollform(n>app, [h, a, u, p, t, s, e, m, i, n, a, r], [sg, akk], event, neut, [?[pp, [akk], thema, _, D, _]|A]-A, lam(C, lam(B, veranstaltung(B, C)und typ(B, hauptseminar)und D*B)), 'Hauptseminar', 'Hauptseminar').
+vollform(n>app, [r, a, u, m], [sg, akk], loc, mask, A-A, lam(C, lam(B, raum(B, C))), 'Raum', 'Raum').
+vollform(n>app, [d, o, z, e, n, t, e, n], [sg, akk], hum, mask, A-A, lam(C, lam(B, dozent(B, C))), 'Dozent', 'Dozenten').
+vollform(n>app, [d, o, z, e, n, t, i, n], [sg, akk], hum, fem, A-A, lam(C, lam(B, dozent(B, C))), 'Dozentin', 'Dozentin').
+vollform(n>app, [h, e, r, r, n], [sg, akk], hum, mask, A-A, lam(C, lam(B, dozent(B, C))), 'Herr', 'Herrn').
+vollform(n>app, [h, e, r, r, e, n], [sg, akk], hum, mask, A-A, lam(C, lam(B, dozent(B, C))), 'Herr', 'Herren').
+vollform(n>app, [f, r, a, u], [sg, akk], hum, fem, A-A, lam(C, lam(B, dozent(B, C))), 'Frau', 'Frau').
+vollform(n>app, [p, r, o, f, e, s, s, o, r], [sg, akk], hum, mask, A-A, lam(C, lam(B, dozent(B, C)und dozent_titel(B, prof))), 'Professor', 'Professor').
+vollform(n>app, [p, r, o, f, e, s, s, o, r, i, n], [sg, akk], hum, fem, A-A, lam(C, lam(B, dozent(B, C)und dozent_titel(B, prof))), 'Professorin', 'Professorin').
+vollform(n>n, [s, o, m, m, e, r, s, e, m, e, s, t, e, r], [pl, nom], semester>sose, neut, A-A, lam(C, lam(B, semester(B, C))), 'Sommersemester', 'Sommersemester').
+vollform(n>n, [w, i, n, t, e, r, s, e, m, e, s, t, e, r], [pl, nom], semester>wise, neut, A-A, lam(C, lam(B, semester(B, C))), 'Wintersemester', 'Wintersemester').
+vollform(n>n, [s, e, m, e, s, t, e, r], [pl, nom], semester>sem, neut, A-A, lam(C, lam(B, semester(B, C))), 'Semester', 'Semester').
+vollform(n>n, [m, o, n, t, a, g, e], [pl, nom], temp_d, mask, A-A, lam(B, tag(B, mo)), 'Montag', 'Montage').
+vollform(n>n, [d, i, e, n, s, t, a, g, e], [pl, nom], temp_d, mask, A-A, lam(B, tag(B, di)), 'Dienstag', 'Dienstage').
+vollform(n>n, [m, i, t, t, w, o, c, h, e], [pl, nom], temp_d, mask, A-A, lam(B, tag(B, mi)), 'Mittwoch', 'Mittwoche').
+vollform(n>n, [d, o, n, n, e, r, s, t, a, g, e], [pl, nom], temp_d, mask, A-A, lam(B, tag(B, do)), 'Donnerstag', 'Donnerstage').
+vollform(n>n, [f, r, e, i, t, a, g, e], [pl, nom], temp_d, mask, A-A, lam(B, tag(B, fr)), 'Freitag', 'Freitage').
+vollform(n>n, [s, a, m, s, t, a, g, e], [pl, nom], temp_d, mask, A-A, lam(B, tag(B, sa)), 'Samstag', 'Samstage').
+vollform(n>n, [s, o, n, n, t, a, g, e], [pl, nom], temp_d, mask, A-A, lam(B, tag(B, so)), 'Sonntag', 'Sonntage').
+vollform(n>app, [v, e, r, a, n, s, t, a, l, t, u, n, g, e, n], [pl, nom], event, fem, [?[pp, [akk], thema, _, D, _]|A]-A, lam(C, lam(B, veranstaltung(B, C)und D*B)), 'Veranstaltung', 'Veranstaltungen').
+vollform(n>app, [k, u, r, s, e], [pl, nom], event, mask, [?[pp, [akk], thema, _, D, _]|A]-A, lam(C, lam(B, veranstaltung(B, C)und D*B)), 'Kurs', 'Kurse').
+vollform(n>app, [v, o, r, l, e, s, u, n, g, e, n], [pl, nom], event, fem, [?[pp, [akk], thema, _, D, _]|A]-A, lam(C, lam(B, veranstaltung(B, C)und typ(B, vorlesung)und D*B)), 'Vorlesung', 'Vorlesungen').
+vollform(n>app, [s, e, m, i, n, a, r, e], [pl, nom], event, neut, [?[pp, [akk], thema, _, D, _]|A]-A, lam(C, lam(B, veranstaltung(B, C)und typ(B, seminar)und D*B)), 'Seminar', 'Seminare').
+vollform(n>app, [p, r, o, s, e, m, i, n, a, r, e], [pl, nom], event, neut, [?[pp, [akk], thema, _, D, _]|A]-A, lam(C, lam(B, veranstaltung(B, C)und typ(B, proseminar)und D*B)), 'Proseminar', 'Proseminare').
+vollform(n>app, [h, a, u, p, t, s, e, m, i, n, a, r, e], [pl, nom], event, neut, [?[pp, [akk], thema, _, D, _]|A]-A, lam(C, lam(B, veranstaltung(B, C)und typ(B, hauptseminar)und D*B)), 'Hauptseminar', 'Hauptseminare').
+vollform(n>app, [r, a, e, u, m, e], [pl, nom], loc, mask, A-A, lam(C, lam(B, raum(B, C))), 'Raum', 'Raeume').
+vollform(n>app, [d, o, z, e, n, t, e, n], [pl, nom], hum, mask, A-A, lam(C, lam(B, dozent(B, C))), 'Dozent', 'Dozenten').
+vollform(n>app, [d, o, z, e, n, t, i, n, n, e, n], [pl, nom], hum, fem, A-A, lam(C, lam(B, dozent(B, C))), 'Dozentin', 'Dozentinnen').
+vollform(n>app, [h, e, r, r, e, n], [pl, nom], hum, mask, A-A, lam(C, lam(B, dozent(B, C))), 'Herr', 'Herren').
+vollform(n>app, [f, r, a, u, e, n], [pl, nom], hum, fem, A-A, lam(C, lam(B, dozent(B, C))), 'Frau', 'Frauen').
+vollform(n>app, [p, r, o, f, e, s, s, o, r, e, n], [pl, nom], hum, mask, A-A, lam(C, lam(B, dozent(B, C)und dozent_titel(B, prof))), 'Professor', 'Professoren').
+vollform(n>app, [p, r, o, f, e, s, s, o, r, i, n, n, e, n], [pl, nom], hum, fem, A-A, lam(C, lam(B, dozent(B, C)und dozent_titel(B, prof))), 'Professorin', 'Professorinnen').
+vollform(n>n, [s, o, m, m, e, r, s, e, m, e, s, t, e, r], [pl, dat], semester>sose, neut, A-A, lam(C, lam(B, semester(B, C))), 'Sommersemester', 'Sommersemester').
+vollform(n>n, [s, o, m, m, e, r, s, e, m, e, s, t, e, r, n], [pl, dat], semester>sose, neut, A-A, lam(C, lam(B, semester(B, C))), 'Sommersemester', 'Sommersemestern').
+vollform(n>n, [w, i, n, t, e, r, s, e, m, e, s, t, e, r], [pl, dat], semester>wise, neut, A-A, lam(C, lam(B, semester(B, C))), 'Wintersemester', 'Wintersemester').
+vollform(n>n, [w, i, n, t, e, r, s, e, m, e, s, t, e, r, n], [pl, dat], semester>wise, neut, A-A, lam(C, lam(B, semester(B, C))), 'Wintersemester', 'Wintersemestern').
+vollform(n>n, [s, e, m, e, s, t, e, r], [pl, dat], semester>sem, neut, A-A, lam(C, lam(B, semester(B, C))), 'Semester', 'Semester').
+vollform(n>n, [s, e, m, e, s, t, e, r, n], [pl, dat], semester>sem, neut, A-A, lam(C, lam(B, semester(B, C))), 'Semester', 'Semestern').
+vollform(n>n, [m, o, n, t, a, g, e, n], [pl, dat], temp_d, mask, A-A, lam(B, tag(B, mo)), 'Montag', 'Montagen').
+vollform(n>n, [d, i, e, n, s, t, a, g, e, n], [pl, dat], temp_d, mask, A-A, lam(B, tag(B, di)), 'Dienstag', 'Dienstagen').
+vollform(n>n, [m, i, t, t, w, o, c, h, e, n], [pl, dat], temp_d, mask, A-A, lam(B, tag(B, mi)), 'Mittwoch', 'Mittwochen').
+vollform(n>n, [d, o, n, n, e, r, s, t, a, g, e, n], [pl, dat], temp_d, mask, A-A, lam(B, tag(B, do)), 'Donnerstag', 'Donnerstagen').
+vollform(n>n, [f, r, e, i, t, a, g, e, n], [pl, dat], temp_d, mask, A-A, lam(B, tag(B, fr)), 'Freitag', 'Freitagen').
+vollform(n>n, [s, a, m, s, t, a, g, e, n], [pl, dat], temp_d, mask, A-A, lam(B, tag(B, sa)), 'Samstag', 'Samstagen').
+vollform(n>n, [s, o, n, n, t, a, g, e, n], [pl, dat], temp_d, mask, A-A, lam(B, tag(B, so)), 'Sonntag', 'Sonntagen').
+vollform(n>app, [v, e, r, a, n, s, t, a, l, t, u, n, g, e, n], [pl, dat], event, fem, [?[pp, [akk], thema, _, D, _]|A]-A, lam(C, lam(B, veranstaltung(B, C)und D*B)), 'Veranstaltung', 'Veranstaltungen').
+vollform(n>app, [k, u, r, s, e, n], [pl, dat], event, mask, [?[pp, [akk], thema, _, D, _]|A]-A, lam(C, lam(B, veranstaltung(B, C)und D*B)), 'Kurs', 'Kursen').
+vollform(n>app, [v, o, r, l, e, s, u, n, g, e, n], [pl, dat], event, fem, [?[pp, [akk], thema, _, D, _]|A]-A, lam(C, lam(B, veranstaltung(B, C)und typ(B, vorlesung)und D*B)), 'Vorlesung', 'Vorlesungen').
+vollform(n>app, [s, e, m, i, n, a, r, e, n], [pl, dat], event, neut, [?[pp, [akk], thema, _, D, _]|A]-A, lam(C, lam(B, veranstaltung(B, C)und typ(B, seminar)und D*B)), 'Seminar', 'Seminaren').
+vollform(n>app, [p, r, o, s, e, m, i, n, a, r, e, n], [pl, dat], event, neut, [?[pp, [akk], thema, _, D, _]|A]-A, lam(C, lam(B, veranstaltung(B, C)und typ(B, proseminar)und D*B)), 'Proseminar', 'Proseminaren').
+vollform(n>app, [h, a, u, p, t, s, e, m, i, n, a, r, e, n], [pl, dat], event, neut, [?[pp, [akk], thema, _, D, _]|A]-A, lam(C, lam(B, veranstaltung(B, C)und typ(B, hauptseminar)und D*B)), 'Hauptseminar', 'Hauptseminaren').
+vollform(n>app, [r, a, e, u, m, e, n], [pl, dat], loc, mask, A-A, lam(C, lam(B, raum(B, C))), 'Raum', 'Raeumen').
+vollform(n>app, [d, o, z, e, n, t, e, n], [pl, dat], hum, mask, A-A, lam(C, lam(B, dozent(B, C))), 'Dozent', 'Dozenten').
+vollform(n>app, [d, o, z, e, n, t, i, n, n, e, n], [pl, dat], hum, fem, A-A, lam(C, lam(B, dozent(B, C))), 'Dozentin', 'Dozentinnen').
+vollform(n>app, [h, e, r, r, e, n], [pl, dat], hum, mask, A-A, lam(C, lam(B, dozent(B, C))), 'Herr', 'Herren').
+vollform(n>app, [f, r, a, u, e, n], [pl, dat], hum, fem, A-A, lam(C, lam(B, dozent(B, C))), 'Frau', 'Frauen').
+vollform(n>app, [p, r, o, f, e, s, s, o, r, e, n], [pl, dat], hum, mask, A-A, lam(C, lam(B, dozent(B, C)und dozent_titel(B, prof))), 'Professor', 'Professoren').
+vollform(n>app, [p, r, o, f, e, s, s, o, r, i, n, n, e, n], [pl, dat], hum, fem, A-A, lam(C, lam(B, dozent(B, C)und dozent_titel(B, prof))), 'Professorin', 'Professorinnen').
+vollform(n>n, [s, o, m, m, e, r, s, e, m, e, s, t, e, r], [pl, akk], semester>sose, neut, A-A, lam(C, lam(B, semester(B, C))), 'Sommersemester', 'Sommersemester').
+vollform(n>n, [w, i, n, t, e, r, s, e, m, e, s, t, e, r], [pl, akk], semester>wise, neut, A-A, lam(C, lam(B, semester(B, C))), 'Wintersemester', 'Wintersemester').
+vollform(n>n, [s, e, m, e, s, t, e, r], [pl, akk], semester>sem, neut, A-A, lam(C, lam(B, semester(B, C))), 'Semester', 'Semester').
+vollform(n>n, [m, o, n, t, a, g, e], [pl, akk], temp_d, mask, A-A, lam(B, tag(B, mo)), 'Montag', 'Montage').
+vollform(n>n, [d, i, e, n, s, t, a, g, e], [pl, akk], temp_d, mask, A-A, lam(B, tag(B, di)), 'Dienstag', 'Dienstage').
+vollform(n>n, [m, i, t, t, w, o, c, h, e], [pl, akk], temp_d, mask, A-A, lam(B, tag(B, mi)), 'Mittwoch', 'Mittwoche').
+vollform(n>n, [d, o, n, n, e, r, s, t, a, g, e], [pl, akk], temp_d, mask, A-A, lam(B, tag(B, do)), 'Donnerstag', 'Donnerstage').
+vollform(n>n, [f, r, e, i, t, a, g, e], [pl, akk], temp_d, mask, A-A, lam(B, tag(B, fr)), 'Freitag', 'Freitage').
+vollform(n>n, [s, a, m, s, t, a, g, e], [pl, akk], temp_d, mask, A-A, lam(B, tag(B, sa)), 'Samstag', 'Samstage').
+vollform(n>n, [s, o, n, n, t, a, g, e], [pl, akk], temp_d, mask, A-A, lam(B, tag(B, so)), 'Sonntag', 'Sonntage').
+vollform(n>app, [v, e, r, a, n, s, t, a, l, t, u, n, g, e, n], [pl, akk], event, fem, [?[pp, [akk], thema, _, D, _]|A]-A, lam(C, lam(B, veranstaltung(B, C)und D*B)), 'Veranstaltung', 'Veranstaltungen').
+vollform(n>app, [k, u, r, s, e], [pl, akk], event, mask, [?[pp, [akk], thema, _, D, _]|A]-A, lam(C, lam(B, veranstaltung(B, C)und D*B)), 'Kurs', 'Kurse').
+vollform(n>app, [v, o, r, l, e, s, u, n, g, e, n], [pl, akk], event, fem, [?[pp, [akk], thema, _, D, _]|A]-A, lam(C, lam(B, veranstaltung(B, C)und typ(B, vorlesung)und D*B)), 'Vorlesung', 'Vorlesungen').
+vollform(n>app, [s, e, m, i, n, a, r, e], [pl, akk], event, neut, [?[pp, [akk], thema, _, D, _]|A]-A, lam(C, lam(B, veranstaltung(B, C)und typ(B, seminar)und D*B)), 'Seminar', 'Seminare').
+vollform(n>app, [p, r, o, s, e, m, i, n, a, r, e], [pl, akk], event, neut, [?[pp, [akk], thema, _, D, _]|A]-A, lam(C, lam(B, veranstaltung(B, C)und typ(B, proseminar)und D*B)), 'Proseminar', 'Proseminare').
+vollform(n>app, [h, a, u, p, t, s, e, m, i, n, a, r, e], [pl, akk], event, neut, [?[pp, [akk], thema, _, D, _]|A]-A, lam(C, lam(B, veranstaltung(B, C)und typ(B, hauptseminar)und D*B)), 'Hauptseminar', 'Hauptseminare').
+vollform(n>app, [r, a, e, u, m, e], [pl, akk], loc, mask, A-A, lam(C, lam(B, raum(B, C))), 'Raum', 'Raeume').
+vollform(n>app, [d, o, z, e, n, t, e, n], [pl, akk], hum, mask, A-A, lam(C, lam(B, dozent(B, C))), 'Dozent', 'Dozenten').
+vollform(n>app, [d, o, z, e, n, t, i, n, n, e, n], [pl, akk], hum, fem, A-A, lam(C, lam(B, dozent(B, C))), 'Dozentin', 'Dozentinnen').
+vollform(n>app, [h, e, r, r, e, n], [pl, akk], hum, mask, A-A, lam(C, lam(B, dozent(B, C))), 'Herr', 'Herren').
+vollform(n>app, [f, r, a, u, e, n], [pl, akk], hum, fem, A-A, lam(C, lam(B, dozent(B, C))), 'Frau', 'Frauen').
+vollform(n>app, [p, r, o, f, e, s, s, o, r, e, n], [pl, akk], hum, mask, A-A, lam(C, lam(B, dozent(B, C)und dozent_titel(B, prof))), 'Professor', 'Professoren').
+vollform(n>app, [p, r, o, f, e, s, s, o, r, i, n, n, e, n], [pl, akk], hum, fem, A-A, lam(C, lam(B, dozent(B, C)und dozent_titel(B, prof))), 'Professorin', 'Professorinnen').
+vollform(pro>expl, [e, s], [sg, nom], expl, -, A-A, '', es, es).
+vollform(pro>qu, [w, e, r], [sg, nom], hum, -, A-A, lam(C, qu(B, dozent(B, '')und C*B)), wer, wer).
+vollform(pro>qu, [w, e, m], [sg, dat], hum, -, A-A, lam(C, qu(B, dozent(B, '')und C*B)), wer, wem).
+vollform(pro>qu, [w, e, n], [sg, akk], hum, -, A-A, lam(C, qu(B, dozent(B, '')und C*B)), wer, wen).
+vollform(pro>qu, [j, e, m, a, n, d], [sg, nom], hum, -, A-A, lam(C, qu(B, dozent(B, '')und C*B)), jemand, jemand).
+vollform(pro>qu, [j, e, m, a, n, d], [sg, dat], hum, -, A-A, lam(C, qu(B, dozent(B, '')und C*B)), jemand, jemand).
+vollform(pro>qu, [j, e, m, a, n, d, e, m], [sg, dat], hum, -, A-A, lam(C, qu(B, dozent(B, '')und C*B)), jemand, jemandem).
+vollform(pro>qu, [j, e, m, a, n, d], [sg, akk], hum, -, A-A, lam(C, qu(B, dozent(B, '')und C*B)), jemand, jemand).
+vollform(pro>qu, [j, e, m, a, n, d, e, n], [sg, akk], hum, -, A-A, lam(C, qu(B, dozent(B, '')und C*B)), jemand, jemanden).
+vollform(pro>qu, [w, a, s], [sg, nom], event, -, [?[pp, [akk], thema, _, C, _]|A]-A, lam(D, qu(B, veranstaltung(B, '')und C*B und D*B)), was, was).
+vollform(pro>qu, [w, a, s], [sg, dat], event, -, [?[pp, [akk], thema, _, C, _]|A]-A, lam(D, qu(B, veranstaltung(B, '')und C*B und D*B)), was, was).
+vollform(pro>qu, [w, a, s], [sg, akk], event, -, [?[pp, [akk], thema, _, C, _]|A]-A, lam(D, qu(B, veranstaltung(B, '')und C*B und D*B)), was, was).
+vollform(pro>qu, [e, t, w, a, s], [sg, nom], event, -, [?[pp, [akk], thema, _, C, _]|A]-A, lam(D, qu(B, veranstaltung(B, '')und C*B und D*B)), etwas, etwas).
+vollform(pro>qu, [e, t, w, a, s], [sg, dat], event, -, [?[pp, [akk], thema, _, C, _]|A]-A, lam(D, qu(B, veranstaltung(B, '')und C*B und D*B)), etwas, etwas).
+vollform(pro>qu, [e, t, w, a, s], [sg, akk], event, -, [?[pp, [akk], thema, _, C, _]|A]-A, lam(D, qu(B, veranstaltung(B, '')und C*B und D*B)), etwas, etwas).
+vollform(adv>qu, [w, o], [], loc, qu, lam(B, qu(A, ort(A)und B*A)), wo, wo).
+vollform(adv>qu, [w, a, n, n], [], temp_d, qu, lam(B, qu(A, zeit(A)und B*A)), wann, wann).
+vollform(adv>qu, [w, a, n, n], [], semester, qu, lam(B, qu(A, zeit(A)und B*A)), wann, wann).
+vollform(adv>adv, [m, o, n, t, a, g, s], [], temp_d, '', lam(B, ex(A, tag(A, mo)und B*A)), montags, montags).
+vollform(adv>adv, [d, i, e, n, s, t, a, g, s], [], temp_d, '', lam(B, ex(A, tag(A, di)und B*A)), dienstags, dienstags).
+vollform(adv>adv, [m, i, t, t, w, o, c, h, s], [], temp_d, '', lam(B, ex(A, tag(A, mi)und B*A)), mittwochs, mittwochs).
+vollform(adv>adv, [d, o, n, n, e, r, s, t, a, g, s], [], temp_d, '', lam(B, ex(A, tag(A, do)und B*A)), donnerstags, donnerstags).
+vollform(adv>adv, [f, r, e, i, t, a, g, s], [], temp_d, '', lam(B, ex(A, tag(A, fr)und B*A)), freitags, freitags).
+vollform(adv>adv, [s, a, m, s, t, a, g, s], [], temp_d, '', lam(B, ex(A, tag(A, sa)und B*A)), samstags, samstags).
+vollform(adv>adv, [s, o, n, n, t, a, g, s], [], temp_d, '', lam(B, ex(A, tag(A, so)und B*A)), sonntags, sonntags).
+vollform(p>bbox, [v, o, n], [], thema, dat, lam(B, lam(A, thema(A, B))), von, von).
+vollform(p>bbox, [u, e, b, e, r], [], thema, akk, lam(B, lam(A, thema(A, B))), ueber, ueber).
+vollform(p>p, [v, o, n], [], hum, dat, lam(A, lam(B, A*B)), von, von).
+vollform(p>p, [i, n], [], semester, dat, lam(A, lam(B, A*B)), in, in).
+vollform(p>p, [i, n], [], loc, dat, lam(A, lam(B, A*B)), in, in).
+vollform(p>def, [i, m], [], semester, dat, lam(A, lam(C, ex(B, A*B und C*B))), im, im).
+vollform(p>def, [i, m], [], loc, dat, lam(A, lam(C, ex(B, A*B und C*B))), im, im).
+vollform(p>def, [a, m], [], temp_d, dat, lam(A, lam(C, ex(B, A*B und C*B))), am, am).
+vollform(junkt>con, [u, n, d], [], con, '', lam(A, lam(C, lam(B, A*B und C*B))), und, und).
+vollform(junkt>dis, [o, d, e, r], [], dis, '', lam(A, lam(B, lam(C, lam(D, ex(A, (B oder C)und D*A))))), oder, oder).
+vollform(art>def, [d, e, r], [sg, nom], def, mask, lam(A, lam(C, ex(B, A*B und C*B))), der, der).
+vollform(art>def, [d, e, m], [sg, dat], def, mask, lam(A, lam(C, ex(B, A*B und C*B))), der, dem).
+vollform(art>def, [d, e, n], [sg, akk], def, mask, lam(A, lam(C, ex(B, A*B und C*B))), der, den).
+vollform(art>def, [d, i, e], [sg, nom], def, fem, lam(A, lam(C, ex(B, A*B und C*B))), die, die).
+vollform(art>def, [d, e, r], [sg, dat], def, fem, lam(A, lam(C, ex(B, A*B und C*B))), die, der).
+vollform(art>def, [d, i, e], [sg, akk], def, fem, lam(A, lam(C, ex(B, A*B und C*B))), die, die).
+vollform(art>def, [d, a, s], [sg, nom], def, neut, lam(A, lam(C, ex(B, A*B und C*B))), das, das).
+vollform(art>def, [d, e, m], [sg, dat], def, neut, lam(A, lam(C, ex(B, A*B und C*B))), das, dem).
+vollform(art>def, [d, a, s], [sg, akk], def, neut, lam(A, lam(C, ex(B, A*B und C*B))), das, das).
+vollform(art>def, [d, i, e], [pl, nom], def, _, lam(A, lam(C, ex(B, A*B und C*B))), der, die).
+vollform(art>def, [d, e, n], [pl, dat], def, _, lam(A, lam(C, ex(B, A*B und C*B))), der, den).
+vollform(art>def, [d, i, e], [pl, akk], def, _, lam(A, lam(C, ex(B, A*B und C*B))), der, die).
+vollform(art>indef, [e, i, n], [sg, nom], indef, mask, lam(A, lam(C, ex(B, A*B und C*B))), ein, ein).
+vollform(art>indef, [e, i, n, e, m], [sg, dat], indef, mask, lam(A, lam(C, ex(B, A*B und C*B))), ein, einem).
+vollform(art>indef, [e, i, n, e, n], [sg, akk], indef, mask, lam(A, lam(C, ex(B, A*B und C*B))), ein, einen).
+vollform(art>indef, [e, i, n, e], [sg, nom], indef, fem, lam(A, lam(C, ex(B, A*B und C*B))), ein, eine).
+vollform(art>indef, [e, i, n, e, r], [sg, dat], indef, fem, lam(A, lam(C, ex(B, A*B und C*B))), ein, einer).
+vollform(art>indef, [e, i, n, e], [sg, akk], indef, fem, lam(A, lam(C, ex(B, A*B und C*B))), ein, eine).
+vollform(art>indef, [e, i, n], [sg, nom], indef, neut, lam(A, lam(C, ex(B, A*B und C*B))), ein, ein).
+vollform(art>indef, [e, i, n, e, m], [sg, dat], indef, neut, lam(A, lam(C, ex(B, A*B und C*B))), ein, einem).
+vollform(art>indef, [e, i, n], [sg, akk], indef, neut, lam(A, lam(C, ex(B, A*B und C*B))), ein, ein).
+vollform(art>qu, [w, e, l, c, h, e, r], [sg, nom], qu, mask, lam(A, lam(C, qu(B, A*B und C*B))), welch, welcher).
+vollform(art>qu, [w, e, l, c, h, e, m], [sg, dat], qu, mask, lam(A, lam(C, qu(B, A*B und C*B))), welch, welchem).
+vollform(art>qu, [w, e, l, c, h, e, n], [sg, akk], qu, mask, lam(A, lam(C, qu(B, A*B und C*B))), welch, welchen).
+vollform(art>qu, [w, e, l, c, h, e], [sg, nom], qu, fem, lam(A, lam(C, qu(B, A*B und C*B))), welch, welche).
+vollform(art>qu, [w, e, l, c, h, e, r], [sg, dat], qu, fem, lam(A, lam(C, qu(B, A*B und C*B))), welch, welcher).
+vollform(art>qu, [w, e, l, c, h, e], [sg, akk], qu, fem, lam(A, lam(C, qu(B, A*B und C*B))), welch, welche).
+vollform(art>qu, [w, e, l, c, h, e, s], [sg, nom], qu, neut, lam(A, lam(C, qu(B, A*B und C*B))), welch, welches).
+vollform(art>qu, [w, e, l, c, h, e, m], [sg, dat], qu, neut, lam(A, lam(C, qu(B, A*B und C*B))), welch, welchem).
+vollform(art>qu, [w, e, l, c, h, e, s], [sg, akk], qu, neut, lam(A, lam(C, qu(B, A*B und C*B))), welch, welches).
+vollform(art>qu, [w, e, l, c, h, e], [pl, nom], qu, _, lam(A, lam(C, qu(B, A*B und C*B))), welch, welche).
+vollform(art>qu, [w, e, l, c, h, e, n], [pl, dat], qu, _, lam(A, lam(C, qu(B, A*B und C*B))), welch, welchen).
+vollform(art>qu, [w, e, l, c, h, e], [pl, akk], qu, _, lam(A, lam(C, qu(B, A*B und C*B))), welch, welche).
