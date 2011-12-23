@@ -14,21 +14,21 @@
 	% limitations under the License.
 
 
-:- [basis].
-:- [vorverarbeitung].
-%:- [flexion].
-%:- [flexion_endungstabellen].
-%:- [flexion_hilfsverben].
-%:- [lexikon_grundformen].
+:- ['basis.pl'].
+:- ['vorverarbeitung.pl'].
+%:- ['flexion.pl'].
+%:- ['flexion_endungstabellen.pl'].
+%:- ['flexion_hilfsverben.pl'].
+%:- ['lexikon_grundformen.pl'].
 :- ['vollformen.liste'].
-%:- [lexikon_vollformen].
-:- [expandiere_valenz].
-:- [lexikon].
-:- [syntax_phrasen].
-:- [syntax_felder].
-:- [evaluation].
-:- [syntax_saetze].
-:- [semantik_lambda].
-:- [semantik_lucene].
-:- [transformation].
-:- [anfrage].
+%:- ['lexikon_vollformen.pl'].
+:- ['expandiere_valenz.pl'].
+:- ['lexikon.pl'].
+:- ['syntax_phrasen.pl'].
+:- ['syntax_felder.pl'].
+:- ['evaluation.pl'].
+:- ['syntax_saetze.pl'].
+:- ['semantik_lambda.pl'].
+:- ['semantik_lucene.pl'].
+:- ['transformation.pl'].
+:- ['anfrage.pl'].

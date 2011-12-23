@@ -45,7 +45,7 @@ public class GrammarManager {
 	 */
 	public GrammarManager(final Resources res, final Analyzer analyzer) {
 		File startFile = res.getFile("nasfi.StartFile",
-				"/WEB-INF/classes/grammar/start_vf");
+				"/WEB-INF/classes/grammar/start_vf.pl");
 
 		if (startFile == null) {
 			throw new IllegalArgumentException("Start file not found");
