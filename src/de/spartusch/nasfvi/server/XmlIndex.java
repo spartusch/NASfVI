@@ -27,6 +27,7 @@ import org.apache.lucene.analysis.Analyzer;
 import org.apache.lucene.document.Document;
 import org.apache.lucene.document.Field;
 import org.apache.lucene.index.CorruptIndexException;
+import org.apache.lucene.index.IndexReader;
 import org.apache.lucene.index.IndexWriter;
 import org.apache.lucene.index.IndexWriterConfig;
 import org.apache.lucene.index.IndexWriterConfig.OpenMode;
@@ -82,7 +83,7 @@ public class XmlIndex {
 			FileMethods.delete(dir);
 		}
 		index = FSDirectory.open(dir);
-		config = new IndexWriterConfig(Version.LUCENE_33, analyzer);
+		config = new IndexWriterConfig(Version.LUCENE_35, analyzer);
 		config.setOpenMode(OpenMode.CREATE_OR_APPEND);
 		semesters = new TreeSet<String>();
 	}
@@ -95,7 +96,7 @@ public class XmlIndex {
 	 */
 	public XmlIndex(final Analyzer analyzer) throws IOException {
 		index = new RAMDirectory();
-		config = new IndexWriterConfig(Version.LUCENE_33, analyzer);
+		config = new IndexWriterConfig(Version.LUCENE_35, analyzer);
 		config.setOpenMode(OpenMode.CREATE);
 		semesters = new TreeSet<String>();
 	}
@@ -141,7 +142,9 @@ public class XmlIndex {
 		xr.parse(new InputSource(xmlSource));
 
 		LOGGER.info(handler.documentsAdded() + " documents added");
-		searcher = new NSearcher(new IndexSearcher(index, true));
+		searcher = new NSearcher(
+			new IndexSearcher(IndexReader.open(index, true))
+		);
 	}
 
 	/**
@@ -235,7 +238,6 @@ public class XmlIndex {
 		public void endDocument() throws SAXException {
 			try {
 				writer.commit();
-				writer.optimize();
 			} catch (CorruptIndexException e) {
 				LOGGER.severe(e.toString());
 				throw new RuntimeException(e);

@@ -17,14 +17,14 @@ Voraussetzungen
 Installation
 ------------
 
-1. Apache Lucene 3.3 herunterladen (http://lucene.apache.org/java/docs/index.html)
+1. Apache Lucene 3.5 herunterladen (http://lucene.apache.org/java/docs/index.html)
 	- folgende Dateien werden benötigt:
-		- lucene-analyzers-3.3.0.jar
-		- lucene-core-3.3.0.jar
-		- lucene-highlighter-3.3.0.jar
-		- lucene-memory-3.3.0.jar
-		- lucene-queries-3.3.0.jar
-		- lucene-queryparser-3.3.0.jar
+		- lucene-analyzers-3.5.0.jar
+		- lucene-core-3.5.0.jar
+		- lucene-highlighter-3.5.0.jar
+		- lucene-memory-3.5.0.jar
+		- lucene-queries-3.5.0.jar
+		- lucene-queryparser-3.5.0.jar
 	- die benötigten Jar-Dateien in das Verzeichnis war/WEB-INF/lib kopieren
 
 2. jetty herunterladen (http://www.eclipse.org/jetty/)

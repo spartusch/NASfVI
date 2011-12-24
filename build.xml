@@ -21,8 +21,10 @@
                 destdir="${build.dir}"
                 srcdir="${src.dir}"
                 classpathref="libs"
-                includeantruntime="false">
+                includeantruntime="false"
+                deprecation="true">
             <exclude name="de/spartusch/nasfvi/client/**"/>
+            <compilerarg value="-Xlint"/>
         </javac>
         <copy todir="${build.dir}/grammar">
             <fileset dir="${src.dir}/grammar"/>

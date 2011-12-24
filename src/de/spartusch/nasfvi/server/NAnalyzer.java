@@ -83,12 +83,12 @@ public class NAnalyzer extends Analyzer {
 	 * @return Analyzed and processed tokens from <code>reader</code>
 	 */
 	private TokenStream naturalText(final Reader reader) {
-		TokenStream result = new StandardTokenizer(Version.LUCENE_33, reader);
+		TokenStream result = new StandardTokenizer(Version.LUCENE_35, reader);
 
-		result = new StandardFilter(Version.LUCENE_33, result);
-		result = new LowerCaseFilter(Version.LUCENE_33, result);
-		result = new StopFilter(Version.LUCENE_33, result, stopWords);
-		result = new DictionaryCompoundWordTokenFilter(Version.LUCENE_33, result, compounds);
+		result = new StandardFilter(Version.LUCENE_35, result);
+		result = new LowerCaseFilter(Version.LUCENE_35, result);
+		result = new StopFilter(Version.LUCENE_35, result, stopWords);
+		result = new DictionaryCompoundWordTokenFilter(Version.LUCENE_35, result, compounds);
 		result = new SnowballFilter(result, "German2");
 
 		return result;		
@@ -110,11 +110,11 @@ public class NAnalyzer extends Analyzer {
 	 * @return Analyzed and processed tokens from <code>reader</code>
 	 */
 	private TokenStream simpleText(final Reader reader) {
-		TokenStream result = new StandardTokenizer(Version.LUCENE_33, reader);
+		TokenStream result = new StandardTokenizer(Version.LUCENE_35, reader);
 
-		result = new StandardFilter(Version.LUCENE_33, result);
-		result = new LowerCaseFilter(Version.LUCENE_33, result);
-		result = new StopFilter(Version.LUCENE_33, result, stopWords);
+		result = new StandardFilter(Version.LUCENE_35, result);
+		result = new LowerCaseFilter(Version.LUCENE_35, result);
+		result = new StopFilter(Version.LUCENE_35, result, stopWords);
 		result = new SnowballFilter(result, "German2");
 
 		return result;	
