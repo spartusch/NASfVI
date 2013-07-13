@@ -10,39 +10,31 @@ Dem Quellcode liegen Vorlesungsdaten des Centrums für Informations- und Sprachv
 Voraussetzungen
 ---------------
 
-- Eine Laufzeitumgebung für Java 6 muss vorhanden sein
-- SWI-Prolog muss installiert sein (http://www.swi-prolog.org/)
-- Für die Installation mit Apache Ant muss Apache Ant installiert sein (http://ant.apache.org/)
+- Java SDK (Version >= 1.6)
+- Maven (Version >= 3.x)
+- SWI-Prolog mit JPL-Unterstützung.
+	Unter OS X kann SWI-Prolog mit [HomeBrew](http://mxcl.github.io/homebrew/) installiert werden:
+	`brew install --with-jpl swi-prolog`
 
-Installation
-------------
+Verwendung
+----------
 
-1. Apache Lucene 3.5 herunterladen (http://lucene.apache.org/java/docs/index.html)
-	- folgende Dateien werden benötigt:
-		- lucene-analyzers-3.5.0.jar
-		- lucene-core-3.5.0.jar
-		- lucene-highlighter-3.5.0.jar
-		- lucene-memory-3.5.0.jar
-		- lucene-queries-3.5.0.jar
-		- lucene-queryparser-3.5.0.jar
-	- die benötigten Jar-Dateien in das Verzeichnis war/WEB-INF/lib kopieren
+Um die Java-Prolog-Schnittstelle und damit NASfVI verwenden zu können, muss die Umgebungsvariabel `MAVEN_OPTS` gesetzt werden:
 
-2. jetty herunterladen (http://www.eclipse.org/jetty/)
-    - jetty entpacken und in das Verzeichnis von NASfVI verschieben
-    - das Verzeichnis von jetty in "jetty" umbenennen
+	MAVEN_OPTS="-Djava.library.path=..."
 
-3. Das Google Web Toolkit SDK (GWT SDK) herunterladen (http://code.google.com/intl/de/webtoolkit/download.html)
-    - das GWT SDK entpacken und in das Verzeichnis von NASfVI verschieben
-    - das Verzeichnis des GWT SDK in "gwt" umbenennen
+Statt `...` muss der Pfad zu den dynamischen Bibliotheken von SWI-Prolog angegeben werden. Unter OS X kann das zum Beispiel so aussehen:
 
-4. In das Verzeichnis von NASfVI wechseln und Apache Ant mit dem Befehl "ant" oder "ant install" aufrufen.
+	export MAVEN_OPTS="-Djava.library.path=/usr/local/Cellar/swi-prolog/6.2.6/lib/swipl-6.2.6/lib/x86_64-darwin12.4.0/"
 
-Starten von NASfVI
-------------------
+Dieser Pfad ist jedoch je nach System und Version von SWI-Prolog verschieden!
 
-Um NASfVI zu starten, muss in das Verzeichnis von jetty gewechselt werden.
-jetty und NASfVI können mit dem folgenden Befehl gestartet werden:
+NASfVI selbst kann sehr einfach aus seinem Ordner heraus gestartet werden:
 
-	java -server -Djava.library.path=PFAD_JPL -jar start.jar
+	mvn jetty:run-war
 
-Dabei muss PFAD_JPL durch den absoluten Pfad zur Installation von SWI-Prolog ersetzt werden.
+Sobald NASfVI erfolgreich gestartet worden ist, kann es im Browser aufgerufen werden:
+
+[http://localhost:8080](http://localhost:8080)
+
+Mit Ctrl+C kann es wieder beendet werden.

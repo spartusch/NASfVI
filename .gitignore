@@ -1,8 +1,2 @@
 .DS_Store
-gwt-unitCache
-gwt
-jetty
-war/WEB-INF/classes
-war/WEB-INF/deploy
-war/WEB-INF/lib/lucene*.jar
-war/nasfvi_client
+target
